@@ -3,6 +3,10 @@ set -x
 
 # Use the main branch until we have a release with DICOM
 # otherwise: --branch=v3.4.1, etc.
+# IMPORTANT NOTE: If we're building OpenSlide instead of installing from apt-get
+# whenever the version in meson.build in OpenSlide source code is updated,
+# the version in our files "libopenslide0" and "register_openslide_apt.sh"
+# needs to be updated to be a greater version number (or equal)
 git clone https://github.com/openslide/openslide.git --branch=main --depth=1
 cd openslide
 

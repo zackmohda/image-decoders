@@ -19,19 +19,8 @@ RUN ./install_openjpeg.sh
 WORKDIR /root/src
 RUN ./install_openslide.sh
 
-## build dummy apt packages
-RUN mkdir equivs
-RUN cd equivs
-ADD libopenslide0 .
-
-# libopenslide0
-RUN equivs-build libopenslide0
-RUN dpkg -i libopenslide0_3.4.2_all.deb
-
-# libopenslide-dev
-RUN sed -i 's/libopenslide0/libopenslide-dev/g' libopenslide0
-RUN mv libopenslide0 libopenslide-dev
-RUN equivs-build libopenslide-dev
-RUN dpkg -i libopenslide-dev_3.4.2_all.deb
+## Install dummy apt packages against competitor versions being installed
+WORKDIR /root/src
+RUN ./register_openslide_apt.sh
 
 WORKDIR /
