@@ -10,7 +10,7 @@ git clone https://github.com/camicroscope/BFBridge.git bfbridge -q --branch v0.1
 
 ## BioFormats wrapper
 
-cd /root/src/bfbridge/java
+cd /root/src/BFBridge/java
 
 # Classpath of "." and "/usr/lib/java/*" means look for Java classes in this folder
 # (which contains:  org/camicroscope/*) and in /usr/lib/java/* (containing:
@@ -22,4 +22,4 @@ javac -cp ".:/usr/lib/java/*" org/camicroscope/BFBridge.java
 jar c0f BfBridge.jar org/camicroscope/*.class
 
 ## Move them to a single directory
-mv /root/src/bfbridge/java/BfBridge.jar /usr/lib/java
+mv /root/src/BFBridge/java/BfBridge.jar /usr/lib/java
