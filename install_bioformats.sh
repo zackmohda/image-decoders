@@ -34,6 +34,6 @@ rm logger_printing_errors_only_compressed.jar
 # jar tvf ../jar_files/bioformats_all_in_one.jar
 
 ## Move them to a single directory
-mv /root/src/bioformats/* /usr/lib/java
+mv /root/src/image-decoders/bioformats/* /usr/lib/java
 
 #### Missing optimization: Packing all Jars to a single Jar
