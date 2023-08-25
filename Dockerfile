@@ -47,7 +47,7 @@ RUN ./install_bfbridge.sh
 
 ### bring the remaining files
 ## (previous ones needed extra caching due to their size)
-COPY . /root/src
+COPY . /root/src/image-decoders
 
 ### openjpeg version in ubuntu 14.04 is 1.3, too old and does not have openslide required chroma subsampled images support.  download 2.5.0 from source and build
 WORKDIR /root/src/image-decoders
