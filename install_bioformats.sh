@@ -25,7 +25,7 @@ wget -q https://repo1.maven.org/maven2/org/slf4j/slf4j-simple/1.7.36/slf4j-simpl
 # likewise
 unzip -q logger_printing_errors_only_compressed.jar -d temp
 cd temp
-zip -0 -q -r logger_printing_errors_only.jar *
+zip -0 -q -r ../logger_printing_errors_only.jar *
 cd ..
 rm -r temp
 rm logger_printing_errors_only_compressed.jar
