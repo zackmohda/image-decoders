@@ -2,7 +2,7 @@
 set -x
 set -e
 
-## BioFormats
+## BioFormats
 
 mkdir bioformats
 cd bioformats

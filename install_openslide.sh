@@ -11,7 +11,7 @@ set -e
 git clone https://github.com/openslide/openslide.git --branch=main --depth=1
 cd openslide
 
-## test that openslide still automatically installs libdicom as a meson submodule
+## test that openslide still automatically installs libdicom as a meson submodule
 # if not, modify this Dockerfile to install it
 # also for uthash, which is a dependency of libdicom
 test -e subprojects/libdicom.wrap

@@ -28,7 +28,7 @@ RUN ./install_jdk.sh
 ENV JAVA_HOME=/java_home
 ENV PATH="/java_home/bin:$PATH"
 
-### BioFormats
+### BioFormats
 RUN mkdir -p /usr/lib/java
 ENV BFBRIDGE_CLASSPATH=/usr/lib/java
 ENV CLASSPATH=/usr/lib/java
