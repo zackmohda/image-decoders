@@ -60,7 +60,10 @@ RUN ./install_openjpeg.sh
 WORKDIR /root/src/image-decoders
 RUN chmod a+x install_openslide.sh
 RUN ./install_openslide.sh
-run ln -s /usr/local/lib/aarch64-linux-gnu/libopenslide.so.1 /usr/lib/aarch64-linux-gnu/libopenslide.so.0
+
+# temporary fix bc it's looking for .so.0 but has .so.1
+WORKDIR /usr/local/lib
+RUN ln -s $(ls | grep libopenslide.so.1) libopenslide.so.0
 
 ## Install dummy apt packages against competitor versions being installed
 WORKDIR /root/src/image-decoders
