@@ -53,9 +53,11 @@ COPY . /root/src/image-decoders
 WORKDIR /root/src/image-decoders
 RUN chmod a+x install_openjpeg.sh
 RUN ./install_openjpeg.sh
+run ln -s /usr/local/lib/aarch64-linux-gnu/libopenslide.so.1 /usr/lib/aarch64-linux-gnu/libopenslide.so.0
 
 ### OpenSlide
-# alternative: apt-get install libopenslide-dev
+# RUN apt-get -qy install libopenslide-dev
+# alternative
 WORKDIR /root/src/image-decoders
 RUN chmod a+x install_openslide.sh
 RUN ./install_openslide.sh
