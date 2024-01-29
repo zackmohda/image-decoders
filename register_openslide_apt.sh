@@ -15,3 +15,5 @@ sed -i 's/libopenslide0/libopenslide-dev/g' libopenslide0
 mv libopenslide0 libopenslide-dev
 equivs-build libopenslide-dev
 dpkg -i libopenslide-dev_4.1.0_all.deb
+
+export LD_LIBRARY_PATH=/usr/local/lib

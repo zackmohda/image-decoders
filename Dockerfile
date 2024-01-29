@@ -61,10 +61,10 @@ WORKDIR /root/src/image-decoders
 RUN chmod a+x install_openslide.sh
 RUN ./install_openslide.sh
 
-# temporary fix bc it's looking for .so.0 but has .so.1
-WORKDIR /usr/local/lib
-RUN ln -s $(ls | grep libopenslide.so.1) libopenslide.so.0
+ENV LD_LIBRARY_PATH=/usr/local/lib
 
+# temporary fix bc it's looking for .so.0 but has .so.1
+RUN bash openslide_symlink.sh
 ## Install dummy apt packages against competitor versions being installed
 WORKDIR /root/src/image-decoders
 RUN chmod a+x register_openslide_apt.sh
